@@ -28,9 +28,9 @@ class BaseModel:
             *args(args): arguments
             **kwargs(dict): attrubute values
         """
-                                                                                                                                DATE_TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%f'
-                                                                                                                                if not kwargs:
-                                                                                                                                    self.id = str(uuid4())
+        DATE_TIME_FORMAT = '%Y-%m-%dT%H:%M:%S.%f'
+        if not kwargs:
+            self.id = str(uuid4())
             self.created_at = datetime.utcnow()
             self.updated_at = datetime.utcnow()
             models.storage.new(self)

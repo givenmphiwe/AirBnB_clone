@@ -72,7 +72,7 @@ class HBNBCommand(cmd.Cmd):
         if num_of_args >= 4 and len(args) < 4:
             print(msg[5])
             return 1
-                                                                                                                                return 0
+            return 0
 
     def handle_empty_line(self, line):
         """
@@ -99,15 +99,17 @@ class HBNBCommand(cmd.Cmd):
     def do_create(self, line):
         """Creates a new instance of @cls_name class,
         and prints the new instance's ID.
+
         Args:
             line(args): Arguments to enter with command: <class name>
             Example: 'create User'
+
         """
-                                                                                                                                if (self.my_errors(line, 1) == 1):
-                                                                                                                                    return
+        if (self.my_errors(line, 1) == 1):
+            return
         args = line.split(" ")
 
-                                                                                                                                """
+        """
         args[0] contains class name, create new instance
         of that class updates 'updated_at' attribute,
         and saves into JSON file
@@ -172,9 +174,9 @@ class HBNBCommand(cmd.Cmd):
             <class name> <id> <attribute name> "<attribute value>"
             Example: 'update User 1234-1234-1234 my_name "Bob"'
         """
-                                                                                                                                if (self.my_errors(line, 4) == 1):
-                                                                                                                                    return
-                                                                                                                                args = line.split()
+        if (self.my_errors(line, 4) == 1):
+            return 
+        args = line.split()
         d = storage.all()
         for i in range(len(args[1:]) + 1):
             if args[i][0] == '"':

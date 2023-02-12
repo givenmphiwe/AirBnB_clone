@@ -46,8 +46,8 @@ class TestConsole(unittest.TestCase):
     def create(self, server=None):
         """
         Redirects stdin and stdout to the mock module
-        """
-i        return HBNBCommand(stdin=self.mock_stdin, stdout=self.mock_stdout)
+        """        
+        return HBNBCommand(stdin=self.mock_stdin, stdout=self.mock_stdout)
 
     def last_write(self, nr=None):
         """Returns last n output lines"""
